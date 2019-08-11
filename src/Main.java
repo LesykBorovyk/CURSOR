@@ -13,7 +13,7 @@ public class Main {
         su_15.landing();
         su_15.engine_off();
 
-        System.out.println("");
+        System.out.println(" ");
 
         f_14.engine_on();
         f_14.fly_up();
@@ -21,5 +21,9 @@ public class Main {
         f_14.attack(Destroyer.AttackType.NOT_GUIDED);
         f_14.landing();
         f_14.engine_off();
+
+
+
+
     }
 }

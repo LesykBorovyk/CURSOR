@@ -6,7 +6,7 @@ public class F_14 extends Destroyer {
     private double weight_empty = 19.838d;
     private int max_speed = 2485;
     private int flying_height = 16150;
-    public int guided_missiles_AIM9 = 2;
+    private int guided_missiles_AIM9 = 2;
     private int missiles_AIM54 = 6;
     private String engine = "General Electric F110-GE-400";
 
@@ -15,12 +15,22 @@ public class F_14 extends Destroyer {
     public void attack(AttackType type) {
         switch (type) {
             case GUIDED:
-                System.out.println(getName() + " Fire AIM-9");
-                guided_missiles_AIM9--;
+                if (guided_missiles_AIM9 > 0) {
+                    System.out.println(getName() + " AIM-9 FIRE!");
+                    guided_missiles_AIM9--;
+                    System.out.println(guided_missiles_AIM9 + " left");
+                }else {
+                    System.out.println(getName() + " ERROR: there are no guided missiles AIM-9");
+                }
                 break;
             case NOT_GUIDED:
-                System.out.println(getName() + " Fire AIM-54");
-                missiles_AIM54--;
+                if (missiles_AIM54 > 0) {
+                    System.out.println(getName() + " AIM-54 FIRE!");
+                    missiles_AIM54--;
+                    System.out.println(missiles_AIM54 + " left");
+                }else{
+                    System.out.println(getName() + " ERROR: there are no missiles AIM-54");
+                }
                 break;
         }
     }
