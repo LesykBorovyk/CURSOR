@@ -17,12 +17,10 @@ public class Main {
         do {
             switch (name = scanner.nextLine()) {
                 case "Su-15":
-                    su_15.action();
-                    System.out.println("Choose destroyer or exit");
+                    makeAction(su_15, scanner);
                     break;
                 case "F-14":
-                    f_14.action();
-                    System.out.println("Choose destroyer or exit");
+                    makeAction(f_14, scanner);
                     break;
                 case "exit":
                     System.out.println("Goodbye");
@@ -33,5 +31,16 @@ public class Main {
                     break;
             }
         } while (!name.equals("exit"));
+
+    }
+
+    private static void makeAction(Destroyer destroyer, Scanner scanner) {
+        String action;
+        System.out.println("enter 'help' to view commands");
+        do {
+            action = scanner.nextLine();
+            destroyer.action(action);
+        } while (!action.equals("exit"));
+        System.out.println("Choose destroyer or exit");
     }
 }

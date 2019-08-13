@@ -24,5 +24,5 @@ public abstract class Destroyer {
 
     protected abstract String getName();
 
-    protected abstract void action();
+    protected abstract void action(String action);
 }
