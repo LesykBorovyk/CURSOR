@@ -20,7 +20,7 @@ public class HW3 {
                     try {
                         prime(scan);
                     }catch (ArithmeticException e){
-                        System.out.println("Exeption");
+                        System.out.println("Exeption: number is not prime");
                     }
                     break;
                 case "Factorial":
@@ -64,18 +64,13 @@ public class HW3 {
             } else if (num <= 1) {
                 throw new ArithmeticException();
 
-            } else if (num == 2) {
-                System.out.println(num + " is prime");
-
             } else if (num > 1) {
                 for (int i = 2; i < num; i++) {
                     if (num % i == 0) {
                         throw new ArithmeticException();
-                    } else {
-                        System.out.println(num + " is prime");
-                        break;
                     }
                 }
+                System.out.println(num + " is prime");
             }
         } while (num != -1);
     }
